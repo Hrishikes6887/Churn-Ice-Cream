@@ -1,0 +1,29 @@
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import BrandValues from '@/components/BrandValues';
+import FlavorCategories from '@/components/FlavorCategories';
+import CreateYourOwn from '@/components/CreateYourOwn';
+import BrandStory from '@/components/BrandStory';
+import ValuesHighlight from '@/components/ValuesHighlight';
+import ContactForm from '@/components/ContactForm';
+import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      <HeroSection />
+      <BrandValues />
+      <FlavorCategories />
+      <CreateYourOwn />
+      <BrandStory />
+      <ValuesHighlight />
+      <ContactForm />
+      <Footer />
+      <WhatsAppButton />
+    </div>
+  );
+};
+
+export default Index;
