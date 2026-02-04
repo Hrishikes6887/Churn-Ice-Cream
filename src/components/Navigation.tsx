@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/LOGO.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,25 +33,20 @@ const Navigation = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3 group">
-          <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
-            isScrolled 
-              ? 'border-primary bg-primary' 
-              : 'border-cream bg-cream/10'
-          }`}>
-            <span className={`font-heading font-bold text-sm ${
-              isScrolled ? 'text-cream' : 'text-cream'
-            }`}>
-              CF
-            </span>
-          </div>
+          <img 
+            src={logo} 
+            alt="Churn Fresh Ice Cream" 
+            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover transition-all duration-300 hover:scale-105"
+            style={{ imageRendering: 'crisp-edges' }}
+          />
           <div className="flex flex-col">
-            <span className={`font-heading font-bold text-xl tracking-wide transition-colors ${
+            <span className={`font-heading font-bold text-2xl md:text-3xl tracking-wide transition-colors ${
               isScrolled ? 'text-primary' : 'text-cream'
             }`}>
               CHURN
             </span>
-            <span className={`text-[10px] tracking-[0.2em] uppercase transition-colors ${
-              isScrolled ? 'text-muted-foreground' : 'text-cream/70'
+            <span className={`text-xs tracking-[0.2em] uppercase transition-colors ${
+              isScrolled ? 'text-muted-foreground' : 'text-cream/80'
             }`}>
               Fresh Ice Cream
             </span>
