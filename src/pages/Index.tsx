@@ -3,7 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import BrandValues from '@/components/BrandValues';
 import FlavorCategories from '@/components/FlavorCategories';
 import CreateYourOwn from '@/components/CreateYourOwn';
-import BrandStory from '@/components/BrandStory';
+import Reviews from '@/components/Reviews';
 import ValuesHighlight from '@/components/ValuesHighlight';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -17,7 +17,7 @@ const Index = () => {
       <BrandValues />
       <FlavorCategories />
       <CreateYourOwn />
-      <BrandStory />
+      <Reviews />
       <ValuesHighlight />
       <ContactForm />
       <Footer />

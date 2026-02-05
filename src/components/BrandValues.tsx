@@ -4,105 +4,91 @@ const values = [
   {
     icon: Leaf,
     title: '100% Real, 100% Fresh',
-    description: 'No artificial flavors, colors, or preservatives. Just pure, natural ingredients.',
-    gradient: 'from-emerald-400 to-teal-500',
-    iconBg: 'bg-emerald-50',
-    iconColor: 'text-emerald-600',
+    description: 'No artificial flavors, colors, or preservatives. Only real, natural ingredients.',
+    iconColor: '#6B8E7F', // Sage
   },
   {
     icon: Apple,
     title: 'Pure Fruits & Veggies',
-    description: 'Cold-pressed, nutrient-rich produce for authentic, vibrant flavors.',
-    gradient: 'from-rose-400 to-pink-500',
-    iconBg: 'bg-rose-50',
-    iconColor: 'text-rose-600',
+    description: 'Cold-pressed, nutrient-rich fruits and vegetables for vibrant, authentic flavors.',
+    iconColor: '#C67B5C', // Clay/Terracotta
   },
   {
     icon: Scale,
     title: 'Trimming the Fat',
-    description: 'Only 7-10% fat compared to 30% in regular ice cream. Guilt-free indulgence.',
-    gradient: 'from-amber-400 to-orange-500',
-    iconBg: 'bg-amber-50',
-    iconColor: 'text-amber-600',
+    description: 'Churn is low in fat (7-10%). Contains one-third of the fat in regular ice creams. ',
+    iconColor: '#D6B25E', // Amber/Gold
   },
   {
     icon: Award,
     title: 'Authentic Artisan',
-    description: 'Hand-roasted nuts and perfectly balanced recipes crafted with care.',
-    gradient: 'from-purple-400 to-indigo-500',
-    iconBg: 'bg-purple-50',
-    iconColor: 'text-purple-600',
+    description: 'Hand-roasted nuts and carefully balanced recipes crafted with care.',
+    iconColor: '#7C6A5C', // Cocoa
   },
   {
     icon: Heart,
     title: 'Quality Always',
-    description: 'Egg-free, gelatin-free, no artificial colorings. Pure quality you can trust.',
-    gradient: 'from-red-400 to-rose-500',
-    iconBg: 'bg-red-50',
-    iconColor: 'text-red-600',
+    description: 'Egg-free, gelatin-free, no premixes or artificial additives. Just honest quality.',
+    iconColor: '#C67B5C', // Clay
   },
   {
     icon: Plane,
-    title: 'Fly to Italy or Drive into Churn',
-    description: 'Trained by Italian gelato masters. Authentic taste without the travel.',
-    gradient: 'from-sky-400 to-blue-500',
-    iconBg: 'bg-sky-50',
-    iconColor: 'text-sky-600',
+    title: 'Italian Craft, Local Heart',
+    description: 'Trained by Italian gelato masters. Authentic taste, made fresh here.',
+    iconColor: '#6B9BC3', // Soft blue
   },
 ];
 
 const BrandValues = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-cream via-white to-mint/20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-mint/30 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-gold/20 to-transparent rounded-full blur-3xl" />
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-20 md:py-28 lg:py-32 bg-[#F7F2EC] relative overflow-hidden">
+      <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <span className="inline-block text-sm tracking-[0.2em] uppercase text-transparent bg-gradient-to-r from-caramel via-gold to-caramel-dark bg-clip-text mb-4 font-semibold">
-            Our Promise
-          </span>
-          <h2 className="font-heading text-5xl md:text-6xl text-foreground mb-6 tracking-tight">
-            Why Choose <span className="text-transparent bg-gradient-to-r from-caramel via-gold to-caramel-dark bg-clip-text">Churn?</span>
+        <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
+          {/* Eyebrow */}
+          <p className="text-xs md:text-sm tracking-[0.25em] uppercase text-[#A18A6F] mb-4 font-light">
+            OUR PROMISE
+          </p>
+          
+          {/* Main Heading */}
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#3D3127] mb-6 tracking-tight font-medium">
+            Why Choose <span className="text-[#D6B25E]">Churn</span>?
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Every scoop tells a story of quality, authenticity, and passion for the perfect gelato experience.
+          
+          {/* Subtext */}
+          <p className="text-base md:text-lg text-[#6B5E52] leading-relaxed font-light max-w-2xl mx-auto">
+            Every scoop reflects our commitment to quality, authenticity, and honest ingredients.
           </p>
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 overflow-hidden"
+              className="value-card bg-white rounded-2xl p-8 md:p-10"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 animation: 'fadeInUp 0.6s ease-out forwards',
                 opacity: 0,
               }}
             >
-              {/* Gradient Background on Hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-              
               {/* Icon */}
-              <div className={`relative w-20 h-20 rounded-2xl ${value.iconBg} flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-md group-hover:shadow-xl`}>
-                <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-500`} />
-                <value.icon className={`w-10 h-10 ${value.iconColor} transition-all duration-500 relative z-10`} strokeWidth={2} />
+              <div className="mb-6 value-card-icon-wrapper">
+                <value.icon 
+                  className="value-card-icon w-8 h-8 md:w-9 md:h-9" 
+                  strokeWidth={1.5} 
+                  style={{ color: value.iconColor }}
+                />
               </div>
 
               {/* Content */}
-              <h3 className="font-heading text-2xl text-foreground mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-gray-900 group-hover:to-gray-700 transition-all duration-300">
+              <h3 className="value-card-title font-serif text-xl md:text-2xl text-[#3D3127] mb-3 leading-tight">
                 {value.title}
               </h3>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-[#6B5E52] text-sm md:text-base leading-relaxed font-light">
                 {value.description}
               </p>
-
-              {/* Decorative Corner Element */}
-              <div className={`absolute top-0 right-0 w-20 h-20 bg-gradient-to-br ${value.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`} />
             </div>
           ))}
         </div>
@@ -112,7 +98,7 @@ const BrandValues = () => {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
           }
           to {
             opacity: 1;
@@ -120,17 +106,61 @@ const BrandValues = () => {
           }
         }
 
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
+        .value-card {
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1),
+                      box-shadow 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .value-card-title {
+          transition: font-weight 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .value-card-icon {
+          transition: color 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+                      filter 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Desktop-only hover effects */
+        @media (hover: hover) and (pointer: fine) {
+          .value-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
           }
-          to {
-            opacity: 1;
+
+          .value-card:hover .value-card-title {
+            font-weight: 600;
+          }
+
+          .value-card:hover .value-card-icon {
+            color: #D6B25E !important;
+            filter: brightness(1.06);
+            transform: scale(1.05);
           }
         }
 
-        .animate-fade-in {
-          animation: fadeIn 0.8s ease-out;
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+          .value-card,
+          .value-card-title,
+          .value-card-icon {
+            transition: none;
+          }
+          
+          .value-card:hover {
+            transform: none;
+          }
+
+          .value-card:hover .value-card-title {
+            font-weight: inherit;
+          }
+
+          .value-card:hover .value-card-icon {
+            color: inherit !important;
+            filter: none;
+            transform: none;
+          }
         }
       `}</style>
     </section>

@@ -1,4 +1,5 @@
 import { Lightbulb, FileText, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import freshFruitsBg from '@/assets/fresh-fruits-bg.jpg';
 
 const steps = [
@@ -55,19 +56,19 @@ const CreateYourOwn = () => {
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {steps.map((step, index) => (
-            <div key={step.title} className="step-card">
+            <div key={step.title} className="step-card group">
               {/* Step Number */}
-              <div className="text-gold/30 font-heading text-6xl font-bold mb-4">
+              <div className="step-number text-gold font-heading text-6xl font-bold mb-4 transition-all duration-300">
                 {step.number}
               </div>
 
               {/* Icon */}
-              <div className="w-16 h-16 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mb-6 mx-auto">
-                <step.icon className="w-7 h-7 text-gold" />
+              <div className="step-icon-wrapper w-16 h-16 rounded-full bg-gold/10 border-2 border-gold/30 flex items-center justify-center mb-6 mx-auto transition-all duration-300">
+                <step.icon className="step-icon w-7 h-7 text-gold transition-all duration-300" />
               </div>
 
               {/* Content */}
-              <h3 className="font-heading text-xl text-foreground mb-3">
+              <h3 className="font-heading text-xl text-foreground mb-3 transition-colors duration-300">
                 {step.title}
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -84,15 +85,79 @@ const CreateYourOwn = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <a
-            href="#contact"
+          <Link
+            to="/create-your-own"
             className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gold hover:bg-gold-light text-chocolate font-semibold rounded-full transition-all duration-300 hover:scale-105 btn-shadow text-lg"
           >
             <Sparkles className="w-5 h-5" />
             Start Creating
-          </a>
+          </Link>
         </div>
       </div>
+
+      <style>{`
+        .step-card {
+          position: relative;
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 24px;
+          padding: 2.5rem 2rem;
+          text-align: center;
+          transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+          opacity: 0.4;
+        }
+
+        /* Desktop-only hover effects */
+        @media (hover: hover) and (pointer: fine) {
+          .step-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(214, 178, 94, 0.25);
+            background: rgba(255, 255, 255, 1);
+          }
+
+          .step-card:hover .step-number {
+            opacity: 1;
+            color: #D6B25E;
+            text-shadow: 0 0 20px rgba(214, 178, 94, 0.4);
+          }
+
+          .step-card:hover .step-icon-wrapper {
+            background: rgba(214, 178, 94, 0.2);
+            border-color: #D6B25E;
+            transform: scale(1.1) rotate(5deg);
+          }
+
+          .step-card:hover .step-icon {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+          }
+        }
+
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+          .step-card,
+          .step-number,
+          .step-icon-wrapper,
+          .step-icon {
+            transition: none;
+          }
+
+          .step-card:hover {
+            transform: none;
+          }
+
+          .step-card:hover .step-icon-wrapper {
+            transform: none;
+          }
+
+          .step-card:hover .step-icon {
+            transform: none;
+          }
+        }
+      `}</style>
     </section>
   );
 };

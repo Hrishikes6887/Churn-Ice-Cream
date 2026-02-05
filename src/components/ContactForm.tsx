@@ -61,8 +61,8 @@ const ContactForm = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Location</h4>
                   <p className="text-muted-foreground">
-                    123 MG Road, Indiranagar<br />
-                    Bangalore, Karnataka 560038
+                    146, 2nd Cross Rd, Jaladarsini Layout<br />
+                    Mathikere, Bengaluru, Karnataka 560094
                   </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
+                  <p className="text-muted-foreground">+91 81053 17181</p>
                 </div>
               </div>
 
@@ -83,7 +83,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <p className="text-muted-foreground">hello@churnfresh.in</p>
+                  <p className="text-muted-foreground">churnfresh@gmail.com</p>
                 </div>
               </div>
 
@@ -94,7 +94,7 @@ const ContactForm = () => {
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Hours</h4>
                   <p className="text-muted-foreground">
-                    Mon - Sun: 11:00 AM - 11:00 PM
+                    Mon - Sun: 1:30 PM - 11:00 PM
                   </p>
                 </div>
               </div>

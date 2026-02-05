@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/LOGO.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,11 +18,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Our Creations', href: '#creations' },
-    { label: 'Create Your Own', href: '#create' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/', isRoute: true },
+    { label: 'About', href: '/about', isRoute: true },
+    { label: 'Our Creations', href: isHomePage ? '#creations' : '/#creations', isRoute: false },
+    { label: 'Create Your Own', href: isHomePage ? '#create' : '/#create', isRoute: false },
+    { label: 'Contact', href: isHomePage ? '#contact' : '/#contact', isRoute: false },
   ];
 
   return (
@@ -32,7 +35,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img 
             src={logo} 
             alt="Churn Fresh Ice Cream" 
@@ -51,18 +54,28 @@ const Navigation = () => {
               Fresh Ice Cream
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={isScrolled ? 'nav-link-dark' : 'nav-link'}
-            >
-              {link.label}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={isScrolled ? 'nav-link-dark' : 'nav-link'}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className={isScrolled ? 'nav-link-dark' : 'nav-link'}
+              >
+                {link.label}
+              </a>
+            )
           ))}
         </div>
 
@@ -85,14 +98,25 @@ const Navigation = () => {
       >
         <div className="container mx-auto px-6 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="py-3 px-4 rounded-lg text-foreground hover:bg-muted transition-colors font-medium"
-            >
-              {link.label}
-            </a>
+            link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-3 px-4 rounded-lg text-foreground hover:bg-muted transition-colors font-medium"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="py-3 px-4 rounded-lg text-foreground hover:bg-muted transition-colors font-medium"
+              >
+                {link.label}
+              </a>
+            )
           ))}
         </div>
       </div>

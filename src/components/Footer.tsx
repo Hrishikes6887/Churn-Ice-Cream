@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Twitter, Youtube, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,10 +12,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
+    { icon: Instagram, href: 'https://www.instagram.com/churnfresh', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/churnfresh', label: 'Facebook' },
+    { icon: Youtube, href: 'https://www.youtube.com/@churnfresh', label: 'YouTube' },
   ];
 
   return (
@@ -83,16 +82,26 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <p className="text-cream/70">
-                  123 MG Road, Indiranagar<br />
-                  Bangalore, Karnataka 560038
+                  146, 2nd Cross Rd, Jaladarsini Layout<br />
+                  Mathikere, Bengaluru<br />
+                  Karnataka 560094
                 </p>
               </div>
-              <p className="text-cream/70">
-                <span className="text-gold">Phone:</span> +91 98765 43210
-              </p>
-              <p className="text-cream/70">
-                <span className="text-gold">Email:</span> hello@churnfresh.in
-              </p>
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                <p className="text-cream/70">+91 81053 17181</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                <p className="text-cream/70">churnfresh@gmail.com</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
+                <div className="text-cream/70">
+                  <p className="font-semibold text-gold">Hours</p>
+                  <p>Mon - Sun: 1:30 PM - 11:00 PM</p>
+                </div>
+              </div>
             </div>
           </div>
 

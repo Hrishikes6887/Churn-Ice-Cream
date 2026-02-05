@@ -1,20 +1,5 @@
-import exoticFlavours from '@/assets/exotic-flavours.jpg';
-import hotChocolate from '@/assets/hot-chocolate.jpg';
-import royalFlavours from '@/assets/royal-flavours.jpg';
-import sandwich from '@/assets/sandwich.jpg';
-import sundae from '@/assets/sundae.jpg';
-import todaysMenu from '@/assets/todays-menu.jpg';
-import veganSorbet from '@/assets/vegan-sorbet.jpg';
-
-const categories = [
-  { name: 'Exotic Flavours', count: 40, image: exoticFlavours },
-  { name: 'Hot Chocolate', count: 3, image: hotChocolate },
-  { name: 'Royal Flavours', count: 18, image: royalFlavours },
-  { name: 'Sandwich', count: 8, image: sandwich },
-  { name: 'Sundae', count: 3, image: sundae },
-  { name: "Today's Menu", count: 12, image: todaysMenu },
-  { name: 'Vegan/Sorbet', count: 29, image: veganSorbet },
-];
+import { Link } from 'react-router-dom';
+import { menuCategories } from '@/data/menuData';
 
 const FlavorCategories = () => {
   return (
@@ -35,10 +20,11 @@ const FlavorCategories = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {categories.map((category, index) => (
-            <div
+          {menuCategories.map((category, index) => (
+            <Link
               key={category.name}
-              className="category-card group cursor-pointer"
+              to={`/menu/${category.slug}`}
+              className="category-card group cursor-pointer block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image Container */}
@@ -54,7 +40,7 @@ const FlavorCategories = () => {
                 
                 {/* Count Badge */}
                 <div className="absolute top-4 right-4 bg-gold text-chocolate text-sm font-bold px-3 py-1 rounded-full">
-                  {category.count}
+                  {category.items.length}
                 </div>
 
                 {/* Category Name */}
@@ -63,11 +49,11 @@ const FlavorCategories = () => {
                     {category.name}
                   </h3>
                   <p className="text-cream/70 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-                    Explore {category.count} flavors →
+                    Explore {category.items.length} flavors →
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
