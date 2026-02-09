@@ -36,7 +36,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-cream-dark">
+    <section id="contact" className="py-24 bg-cream-dark scroll-mt-24">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Contact Info */}
@@ -45,7 +45,7 @@ const ContactForm = () => {
               Get In Touch
             </span>
             <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-6">
-              Visit Us Today
+              Contact Us
             </h2>
             <p className="text-muted-foreground text-lg mb-10">
               Come experience the authentic taste of Italian gelato. 

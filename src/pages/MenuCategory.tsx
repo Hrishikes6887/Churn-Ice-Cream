@@ -72,9 +72,16 @@ const MenuCategory = () => {
                 </div>
 
                 {/* Ice Cream Name */}
-                <h3 className="font-serif text-lg md:text-xl text-[#3D3127] text-center font-medium">
+                <h3 className="font-serif text-lg md:text-xl text-[#3D3127] text-center font-medium mb-2">
                   {item.name}
                 </h3>
+
+                {/* Description (if exists, e.g., for sandwiches) */}
+                {item.description && (
+                  <p className="text-sm md:text-base text-[#6B5E52] leading-relaxed font-light text-center px-2">
+                    {item.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>

@@ -18,11 +18,11 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '/', isRoute: true },
+    { label: 'Home', href: isHomePage ? '#home' : '/', isRoute: !isHomePage },
     { label: 'About', href: '/about', isRoute: true },
     { label: 'Our Creations', href: isHomePage ? '#creations' : '/#creations', isRoute: false },
     { label: 'Create Your Own', href: isHomePage ? '#create' : '/#create', isRoute: false },
-    { label: 'Contact', href: isHomePage ? '#contact' : '/#contact', isRoute: false },
+    { label: 'Achievements', href: isHomePage ? '#achievements' : '/#achievements', isRoute: false },
   ];
 
   return (

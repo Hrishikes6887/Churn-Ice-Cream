@@ -75,7 +75,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         transform: `
           translate(-50%, -50%) 
           translateX(${(cardSize / 1.5) * position}px)
-          translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
+          translateY(${isCenter ? -40 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
         boxShadow: isCenter ? "0px 8px 0px 4px #E5DED0" : "0px 0px 0px 0px transparent"
@@ -142,7 +142,7 @@ export const StaggerTestimonials: React.FC = () => {
   return (
     <div
       className="relative w-full overflow-hidden bg-[#F7F2EC]"
-      style={{ height: 700 }}
+      style={{ height: 520 }}
     >
       {testimonialsList.map((testimonial, index) => {
         const position = testimonialsList.length % 2

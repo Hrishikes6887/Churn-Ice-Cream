@@ -33,7 +33,7 @@ const values = [
   },
   {
     icon: Plane,
-    title: 'Italian Craft, Local Heart',
+    title: 'Fly to Italy or Drive into Churn',
     description: 'Trained by Italian gelato masters. Authentic taste, made fresh here.',
     iconColor: '#6B9BC3', // Soft blue
   },
@@ -41,32 +41,32 @@ const values = [
 
 const BrandValues = () => {
   return (
-    <section className="py-20 md:py-28 lg:py-32 bg-[#F7F2EC] relative overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-20 bg-[#F7F2EC] relative overflow-hidden">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
+        <div className="text-center mb-8 md:mb-10 max-w-4xl mx-auto">
           {/* Eyebrow */}
           <p className="text-xs md:text-sm tracking-[0.25em] uppercase text-[#A18A6F] mb-4 font-light">
             OUR PROMISE
           </p>
           
           {/* Main Heading */}
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#3D3127] mb-6 tracking-tight font-medium">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#3D3127] mb-4 tracking-tight font-medium">
             Why Choose <span className="text-[#D6B25E]">Churn</span>?
           </h2>
           
           {/* Subtext */}
-          <p className="text-base md:text-lg text-[#6B5E52] leading-relaxed font-light max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-[#6B5E52] leading-relaxed font-light max-w-2xl mx-auto">
             Every scoop reflects our commitment to quality, authenticity, and honest ingredients.
           </p>
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="value-card bg-white rounded-2xl p-8 md:p-10"
+              className="value-card bg-white rounded-2xl p-6 md:p-8"
               style={{ 
                 animationDelay: `${index * 0.1}s`,
                 animation: 'fadeInUp 0.6s ease-out forwards',
@@ -74,19 +74,19 @@ const BrandValues = () => {
               }}
             >
               {/* Icon */}
-              <div className="mb-6 value-card-icon-wrapper">
+              <div className="mb-4 value-card-icon-wrapper">
                 <value.icon 
-                  className="value-card-icon w-8 h-8 md:w-9 md:h-9" 
+                  className="value-card-icon w-7 h-7 md:w-8 md:h-8" 
                   strokeWidth={1.5} 
                   style={{ color: value.iconColor }}
                 />
               </div>
 
               {/* Content */}
-              <h3 className="value-card-title font-serif text-xl md:text-2xl text-[#3D3127] mb-3 leading-tight">
+              <h3 className="value-card-title font-serif text-lg md:text-xl text-[#3D3127] mb-2 leading-tight">
                 {value.title}
               </h3>
-              <p className="text-[#6B5E52] text-sm md:text-base leading-relaxed font-light">
+              <p className="text-[#6B5E52] text-sm leading-relaxed font-light">
                 {value.description}
               </p>
             </div>

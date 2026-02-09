@@ -4,8 +4,7 @@ import BrandValues from '@/components/BrandValues';
 import FlavorCategories from '@/components/FlavorCategories';
 import CreateYourOwn from '@/components/CreateYourOwn';
 import Reviews from '@/components/Reviews';
-import ValuesHighlight from '@/components/ValuesHighlight';
-import ContactForm from '@/components/ContactForm';
+import AchievementsSection from '@/components/AchievementsSection';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
@@ -18,8 +17,7 @@ const Index = () => {
       <FlavorCategories />
       <CreateYourOwn />
       <Reviews />
-      <ValuesHighlight />
-      <ContactForm />
+      <AchievementsSection />
       <Footer />
       <WhatsAppButton />
     </div>

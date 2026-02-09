@@ -17,7 +17,7 @@ const CreateYourOwnForm = () => {
     phone: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -45,7 +45,7 @@ Flavour: ${formData.flavour}
 Milk: ${formData.milk}
 Sweetener: ${formData.sweetener}
 Quantity: ${formData.quantity}
-Date / Time: ${formData.dateTime}
+Date: ${formData.dateTime}
 
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
@@ -100,15 +100,25 @@ Phone: ${formData.phone}`;
                 <label htmlFor="milk" className="block text-sm font-bold uppercase tracking-wide mb-2">
                   MILK <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
+                <select
                   id="milk"
                   name="milk"
                   value={formData.milk}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
-                />
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent bg-white text-gray-900 appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 1rem center',
+                    paddingRight: '3rem'
+                  }}
+                >
+                  <option value="">Select milk type</option>
+                  <option value="Milk">Milk</option>
+                  <option value="Coconut">Coconut</option>
+                  <option value="Cashew">Cashew</option>
+                </select>
               </div>
 
               {/* SWEETENER */}
@@ -116,15 +126,25 @@ Phone: ${formData.phone}`;
                 <label htmlFor="sweetener" className="block text-sm font-bold uppercase tracking-wide mb-2">
                   SWEETENER <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="text"
+                <select
                   id="sweetener"
                   name="sweetener"
                   value={formData.sweetener}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
-                />
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent bg-white text-gray-900 appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 1rem center',
+                    paddingRight: '3rem'
+                  }}
+                >
+                  <option value="">Select sweetener type</option>
+                  <option value="White Sugar">White Sugar</option>
+                  <option value="Natural Honey">Natural Honey</option>
+                  <option value="Date Syrup">Date Syrup</option>
+                </select>
               </div>
 
               {/* QUANTITY */}
@@ -144,10 +164,10 @@ Phone: ${formData.phone}`;
                 />
               </div>
 
-              {/* DATE / TIME */}
+              {/* DATE */}
               <div>
                 <label htmlFor="dateTime" className="block text-sm font-bold uppercase tracking-wide mb-2">
-                  DATE / TIME <span className="text-red-500">*</span>
+                  DATE <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="date"
@@ -159,6 +179,9 @@ Phone: ${formData.phone}`;
                   required
                   min={new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
+                  style={{
+                    direction: 'ltr'
+                  }}
                 />
               </div>
 

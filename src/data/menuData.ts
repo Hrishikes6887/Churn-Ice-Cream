@@ -34,15 +34,14 @@ import TandooriPaneerSandwichImg from '@/assets/Tandoori Paneer Sandwich.jpg';
 // Category images
 import exoticFlavoursImg from '@/assets/exotic-flavours.jpg';
 import hotChocolateImg from '@/assets/hot-chocolate.jpg';
-import royalFlavoursImg from '@/assets/royal-flavours.jpg';
 import sandwichImg from '@/assets/sandwich.jpg';
 import sundaeImg from '@/assets/sundae.jpg';
-import todaysMenuImg from '@/assets/todays-menu.jpg';
 import veganSorbetImg from '@/assets/vegan-sorbet.jpg';
 
 export interface IceCreamItem {
   name: string;
   image: string;
+  description?: string;
 }
 
 export interface MenuCategory {
@@ -55,22 +54,28 @@ export interface MenuCategory {
 
 export const menuCategories: MenuCategory[] = [
   {
-    name: 'Exotic Flavours',
-    slug: 'exotic-flavours',
-    description: 'Bold, adventurous flavors from around the world',
+    name: 'Ice Cream Flavours',
+    slug: 'ice-cream-flavours',
+    description: 'Premium handcrafted ice cream flavours from classic to exotic',
     image: exoticFlavoursImg,
     items: [
-      { name: 'Almond', image: AlmondImg },
-      { name: 'Apple Pie', image: ApplePieImg },
-      { name: 'Blueberry', image: BlueberryImg },
-      { name: 'Cashew', image: CashewImg },
-      { name: 'Chikoo', image: ChikooImg },
-      { name: 'Choconut', image: ChoconutImg },
-      { name: 'Coffee Arabica', image: CoffeeArabicaImg },
-      { name: 'Coffee Caramel', image: CoffeeCaramelImg },
-      { name: 'Coffeenut', image: CoffeenutImg },
-      { name: 'Cookie Dough', image: CookieDoughImg },
-      // Add more exotic flavours as you get more images
+      // Previously Exotic Flavours
+      { name: 'Almond', image: AlmondImg, description: 'Luxuriously smooth ice cream made with pure roasted Californian almond paste.' },
+      { name: 'Apple Pie', image: ApplePieImg, description: 'Real apple gelato crafted with our house-made apple pie spice.' },
+      { name: 'Blueberry', image: BlueberryImg, description: 'Yummy purple goodness — healthy, refreshing, and delicious.' },
+      { name: 'Cashew', image: CashewImg, description: 'Smooth and creamy ice cream blended with homemade roasted Mangalore cashew butter.' },
+      { name: 'Chikoo', image: ChikooImg, description: 'A true delight made with fresh, ripe chikoo.' },
+      { name: 'Choconut', image: ChoconutImg, description: 'Dark chocolate ice cream blended with roasted Californian almonds.' },
+      { name: 'Coffee Arabica', image: CoffeeArabicaImg, description: 'Made with 100% Arabica coffee — crafted especially for coffee lovers.' },
+      { name: 'Coffee Caramel', image: CoffeeCaramelImg, description: 'Your favorite coffee macchiato as an ice cream — rich coffee, vanilla, and homemade caramel sauce. A true indulgence.' },
+      { name: 'Coffeenut', image: CoffeenutImg, description: 'Traditional filter kaapi blended with tasty and nutritious nuts.' },
+      { name: 'Cookie Dough', image: CookieDoughImg, description: 'Blended with our own chocolate chip cookie dough — sweet memories of childhood.' },
+      // Previously Royal Flavours
+      { name: 'Ruby Chocolate', image: RubyChocolateImg, description: 'A brand-new ice cream made with ruby chocolate — a gift from nature with fresh berry fruitiness and luscious smoothness.' },
+      { name: 'Pistachio', image: PistachioImg, description: 'The green gold from Iran — seduces the palate and captivates the senses.' },
+      { name: 'Hazelnut', image: HazelnutImg, description: 'Made with freshly roasted hazelnuts sourced from Turkey.' },
+      { name: 'ChocoHazelnut(Nutella)', image: ChocoHazelnutNutellaImg, description: 'A luscious blend of rich chocolate and premium hazelnut.' },
+      { name: 'Brownie Heaven', image: BrownieHeavenImg, description: 'Fudge brownie gelato with real, gooey homemade brownies folded into dark chocolate ice cream.' },
     ],
   },
   {
@@ -79,33 +84,32 @@ export const menuCategories: MenuCategory[] = [
     description: 'Rich, indulgent chocolate experiences',
     image: hotChocolateImg,
     items: [
-      { name: 'Belgium Hot Chocolate', image: BelgiumHotChocolateImg },
-      { name: 'Belgium Hot Chocolate with Arabica Coffee', image: BelgiumHotChocolateArabicaCoffeeImg },
-      { name: 'Belgium Hot Chocolate with Hazelnut', image: BelgiumHotChocolateHazelnutImg },
-    ],
-  },
-  {
-    name: 'Royal Flavours',
-    slug: 'royal-flavours',
-    description: 'Premium, luxurious gelato creations',
-    image: royalFlavoursImg,
-    items: [
-      { name: 'Ruby Chocolate', image: RubyChocolateImg },
-      { name: 'Pistachio', image: PistachioImg },
-      { name: 'Hazelnut', image: HazelnutImg },
-      { name: 'ChocoHazelnut(Nutella)', image: ChocoHazelnutNutellaImg },
-      { name: 'Brownie Heaven', image: BrownieHeavenImg },
+      { name: 'Belgium Hot Chocolate', image: BelgiumHotChocolateImg, description: 'A luscious blend of aromatic Belgium cocoa with single-origin Peruvian chocolate — a true treat for the senses!' },
+      { name: 'Belgium Hot Chocolate with Arabica Coffee', image: BelgiumHotChocolateArabicaCoffeeImg, description: 'Distinctly delicious! A spectacular blend of rich, creamy hot chocolate infused with fine 100% Arabica coffee.' },
+      { name: 'Belgium Hot Chocolate with Hazelnut', image: BelgiumHotChocolateHazelnutImg, description: 'Rich, creamy hot chocolate blended with home-toasted hazelnut butter — a true cup of heaven!' },
     ],
   },
   {
     name: 'Sandwich',
     slug: 'sandwich',
-    description: 'Classic ice cream sandwiches with a twist',
+    description: 'Freshly grilled panini sandwiches with premium fillings',
     image: sandwichImg,
     items: [
-      { name: 'Spinach Corn Sandwish', image: SpinachCornSandwishImg },
-      { name: 'Mumbai Sandwich', image: MumbaiSandwichImg },
-      { name: 'Tandoori Paneer Sandwich', image: TandooriPaneerSandwichImg },
+      { 
+        name: 'Spinach Corn Sandwich', 
+        image: SpinachCornSandwishImg,
+        description: 'Grilled Panini filled with goodness of fresh spinach and delicious sweet corn cooked in homemade cheesy sauce and mozzarella cheese.'
+      },
+      { 
+        name: 'Mumbai Sandwich', 
+        image: MumbaiSandwichImg,
+        description: 'Grilled Panini filled with boiled potatoes and fresh peas, which are tempered with spices and mozzarella cheese.'
+      },
+      { 
+        name: 'Tandoori Paneer Sandwich', 
+        image: TandooriPaneerSandwichImg,
+        description: 'Grilled Panini filled with organic paneer marinated in tandoori masala, bell pepper and mozzarella cheese.'
+      },
     ],
   },
   {
@@ -114,24 +118,9 @@ export const menuCategories: MenuCategory[] = [
     description: 'Decadent sundae creations',
     image: sundaeImg,
     items: [
-      { name: 'Almond Fudge', image: AlmondFudgeImg },
-      { name: 'Kubani ka Meetha', image: KubanikaMeethaImg },
-      { name: 'Cashew Fudge', image: CashewFudgeImg },
-    ],
-  },
-  {
-    name: "Today's Menu",
-    slug: 'todays-menu',
-    description: 'Fresh daily selections',
-    image: todaysMenuImg,
-    items: [
-      { name: 'Almond', image: AlmondImg },
-      { name: 'Blueberry', image: BlueberryImg },
-      { name: 'Cashew', image: CashewImg },
-      { name: 'Chikoo', image: ChikooImg },
-      { name: 'Coffee Arabica', image: CoffeeArabicaImg },
-      { name: 'Cookie Dough', image: CookieDoughImg },
-      // Add today's selections
+      { name: 'Almond Fudge', image: AlmondFudgeImg, description: 'Classic Vanilla ice cream served with homemade chocolate sauce and lots and lots of roasted whole Almonds' },
+      { name: 'Kubani ka Meetha', image: KubanikaMeethaImg, description: 'Classic Vanilla ice cream served with roasted Almonds and Kubani ka Meetha' },
+      { name: 'Cashew Fudge', image: CashewFudgeImg, description: 'Classic Vanilla ice cream served with homemade chocolate sauce and lots and lots of roasted Cashew halves' },
     ],
   },
   {
@@ -140,13 +129,13 @@ export const menuCategories: MenuCategory[] = [
     description: 'Plant-based and fruit-forward delights',
     image: veganSorbetImg,
     items: [
-      { name: 'Avocado (VEGAN)', image: AvocadoVeganImg },
-      { name: 'Pear Ginger Sorbet', image: PearGingerSorbetImg },
-      { name: 'Passion Fruit Sorbet', image: PassionFruitSorbetImg },
-      { name: 'Orange Sorbet', image: OrangeSorbetImg },
-      { name: 'Mint and Lemon Sorbet', image: MintandLemonSorbetImg },
-      { name: 'Kiwi Sorbet', image: KiwiSorbetImg },
-      { name: 'Black Grape Sorbet', image: BlackGrapeSorbetImg },
+      { name: 'Avocado (VEGAN)', image: AvocadoVeganImg, description: 'A captivating ice cream that mixes the creaminess of the Avocado with the rich flavour of coconut, celebration of exotic flavours !!' },
+      { name: 'Pear Ginger Sorbet', image: PearGingerSorbetImg, description: 'Light, but surprisingly rich, with a hint of Ginger' },
+      { name: 'Passion Fruit Sorbet', image: PassionFruitSorbetImg, description: 'The passion and the love that can be tasted in every mouthful will literally "blow your mind"' },
+      { name: 'Orange Sorbet', image: OrangeSorbetImg, description: 'Made from real oranges ...what more can we say?' },
+      { name: 'Mint and Lemon Sorbet', image: MintandLemonSorbetImg, description: 'Magnificently refreshing, made with freshly squeezed Lemon and fresh home-grown peppermint' },
+      { name: 'Kiwi Sorbet', image: KiwiSorbetImg, description: 'Sweet & Sour, refreshing and bursting with vitamin C' },
+      { name: 'Black Grape Sorbet', image: BlackGrapeSorbetImg, description: 'A rich, punchy sorbet just full of grape, sweet and tangy !!' },
     ],
   },
 ];

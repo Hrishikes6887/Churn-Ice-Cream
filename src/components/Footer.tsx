@@ -1,26 +1,28 @@
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock, Map } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Creations', href: '#creations' },
-    { label: 'Create Your Own', href: '#create' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Creations', href: '/#creations' },
+    { label: 'Create Your Own', href: '/create-your-own' },
+    { label: 'Achievements', href: '/#achievements' },
   ];
 
   const socialLinks = [
     { icon: Instagram, href: 'https://www.instagram.com/churnfresh', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/churnfresh', label: 'Facebook' },
     { icon: Youtube, href: 'https://www.youtube.com/@churnfresh', label: 'YouTube' },
+    { icon: MapPin, href: 'https://maps.app.goo.gl/g4UdbJUqrNo4FC9n6', label: 'Google Maps' },
   ];
 
   return (
     <footer className="bg-chocolate py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
@@ -64,12 +66,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-cream/70 hover:text-gold transition-colors text-sm"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,42 +107,14 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-heading text-lg text-cream mb-6">Stay Updated</h4>
-            <p className="text-cream/70 text-sm mb-4">
-              Subscribe for new flavors, special offers, and exclusive events!
-            </p>
-            <form className="flex gap-2">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 px-4 py-3 rounded-xl bg-cream/10 border border-cream/20 text-cream placeholder:text-cream/50 text-sm focus:outline-none focus:border-gold transition-colors"
-              />
-              <button
-                type="submit"
-                className="px-5 py-3 bg-gold hover:bg-gold-light text-chocolate font-semibold rounded-xl transition-all duration-300 text-sm"
-              >
-                Join
-              </button>
-            </form>
-          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-cream/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-center">
             <p className="text-cream/50 text-sm">
               © {currentYear} Churn Fresh Ice Cream. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-cream/50 hover:text-cream transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-cream/50 hover:text-cream transition-colors">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

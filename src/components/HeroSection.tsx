@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden scroll-mt-24">
       {/* Background Video */}
       <div className="absolute inset-0 bg-chocolate">
         {!videoError ? (
@@ -82,7 +82,7 @@ const HeroSection = () => {
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/30 font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
             >
               <ShoppingCart className="w-5 h-5" />
-              Menu - Pick Up
+              Menu
             </a>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { menuCategories } from '@/data/menuData';
 
 const FlavorCategories = () => {
   return (
-    <section id="creations" className="py-24 bg-cream-dark">
+    <section id="creations" className="py-24 bg-cream-dark scroll-mt-24">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -19,7 +19,7 @@ const FlavorCategories = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {menuCategories.map((category, index) => (
             <Link
               key={category.name}
