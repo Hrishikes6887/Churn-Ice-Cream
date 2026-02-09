@@ -39,7 +39,7 @@ const Navigation = () => {
           <img 
             src={logo} 
             alt="Churn Fresh Ice Cream" 
-            className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover transition-all duration-300 hover:scale-105"
+            className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-105"
             style={{ imageRendering: 'crisp-edges' }}
           />
           <div className="flex flex-col">
