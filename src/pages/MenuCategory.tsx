@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 // Category-specific items per page
 const getItemsPerPage = (slug: string): number => {
-  if (slug === 'vegan-sorbet') return 7;
+  if (slug === 'vegan-sorbet') return 11;
   return 27; // Default for ice-cream-flavours and others
 };
 

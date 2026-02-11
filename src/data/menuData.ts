@@ -227,7 +227,7 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Belgium Hot Chocolate', image: BelgiumHotChocolateImg, description: 'A luscious blend of aromatic Belgium cocoa with single-origin Peruvian chocolate — a true treat for the senses!' },
       { name: 'Belgium Hot Chocolate with Arabica Coffee', image: BelgiumHotChocolateArabicaCoffeeImg, description: 'Distinctly delicious! A spectacular blend of rich, creamy hot chocolate infused with fine 100% Arabica coffee.' },
       { name: 'Belgium Hot Chocolate with Hazelnut', image: BelgiumHotChocolateHazelnutImg, description: 'Rich, creamy hot chocolate blended with home-toasted hazelnut butter — a true cup of heaven!' },
-      { name: 'Vegan Belgium Hot Chocolate', image: CommonIceCreamImg, description: 'Rich creamy coconut milk A luscious blend of aromatic Belgium cocoa & single origin Peruvian chocolate with rich creamy coconut milk,dairy free !!' },
+      { name: 'Vegan Belgium Hot Chocolate', image: CommonIceCreamImg, description: 'A luscious blend of aromatic Belgium cocoa & single origin Peruvian chocolate with rich creamy coconut milk,dairy free !!' },
       { name: 'Choco Brownie Shake', image: CommonIceCreamImg, description: 'A chocolate lovers delight !! a big moist piece of super dark,rich chocolate brownie blended right in for a cold treat you can\'t pass up.' },
     ],
   },
@@ -250,7 +250,7 @@ export const menuCategories: MenuCategory[] = [
       { 
         name: 'Tandoori Paneer Sandwich', 
         image: TandooriPaneerSandwichImg,
-        description: 'Grilled Panini filled with organic paneer marinated in tandoori masala, bell pepper and mozzarella cheese.'
+        description: 'Grilled Panini filled with paneer marinated in tandoori masala, bell pepper and mozzarella cheese.'
       },
       { 
         name: 'Brioche Ice cream Sandwich', 
@@ -283,13 +283,19 @@ export const menuCategories: MenuCategory[] = [
     description: 'Plant-based and fruit-forward delights',
     image: veganSorbetImg,
     items: [
+      // Page 1 (11 items)
       { name: 'Avocado (VEGAN)', image: AvocadoVeganImg, description: 'A captivating ice cream that mixes the creaminess of the Avocado with the rich flavour of coconut, celebration of exotic flavours !!' },
-      { name: 'Pear Ginger Sorbet', image: PearGingerSorbetImg, description: 'Light, but surprisingly rich, with a hint of Ginger' },
+      { name: 'Pineapple Sorbet', image: PineappleSorbetImg, description: 'Delicious and refreshing treat, made with fresh pineapple' },
+      { name: 'Plum Sorbet', image: PlumSorbetImg, description: 'Refreshing and bursting with sweet flavor of plum' },
+      { name: 'Sugarcane Sorbet', image: SugercaneSorbatImg, description: 'Beat the heat with this refreshing sorbet' },
+      { name: 'WoodApple Sorbet', image: WoodappleSorbetImg, description: 'Seasonal delicacy, a tasty and healthy refreshing traditional drink made into a sorbet with a combination of wood apple and jaggery' },
       { name: 'Passion Fruit Sorbet', image: PassionFruitSorbetImg, description: 'The passion and the love that can be tasted in every mouthful will literally "blow your mind"' },
       { name: 'Orange Sorbet', image: OrangeSorbetImg, description: 'Made from real oranges ...what more can we say?' },
       { name: 'Mint and Lemon Sorbet', image: MintandLemonSorbetImg, description: 'Magnificently refreshing, made with freshly squeezed Lemon and fresh home-grown peppermint' },
       { name: 'Kiwi Sorbet', image: KiwiSorbetImg, description: 'Sweet & Sour, refreshing and bursting with vitamin C' },
       { name: 'Black Grape Sorbet', image: BlackGrapeSorbetImg, description: 'A rich, punchy sorbet just full of grape, sweet and tangy !!' },
+      { name: 'Pear Ginger Sorbet', image: PearGingerSorbetImg, description: 'Light, but surprisingly rich, with a hint of Ginger' },
+      // Page 2 (11 items)
       { name: 'Lakshman Phal/Soursop Sorbet', image: CommonIceCreamImg, description: 'Fiber rich fruit filled with beneficial antioxidants' },
       { name: 'Pomegranate Sorbet', image: CommonIceCreamImg, description: 'Refreshing and anti-oxidant: Fresh squeezed pomegranates for a tarty, complex and intense sorbet' },
       { name: 'Blood Orange Sorbet', image: CommonVeganSorbetImg, description: 'Refreshing sorbet showcasing the vibrant colour of the blood orange' },
@@ -301,21 +307,18 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Kokum Sorbet', image: CommonVeganSorbetImg, description: 'A exotic fruit from the western ghats loaded with antioxidants made into a tarty refreshing sorbet!! A classic cooler ..' },
       { name: 'Lemon Sorbet', image: CommonVeganSorbetImg, description: 'A sweet and zesty burst of freshly squeezed lemons!' },
       { name: 'Lemon/Basil Sorbet', image: CommonVeganSorbetImg, description: 'Refreshing palate cleanser' },
+      // Page 3 (11 items)
       { name: 'Lemon/Ginger Sorbet', image: CommonVeganSorbetImg, description: 'Cool off with freshly squeezed lemon and a sweet ginger kick' },
       { name: 'Mango Sorbet', image: CommonVeganSorbetImg, description: 'Sweet and tangy, made with the finest mangos' },
       { name: 'Melon Sorbet', image: CommonVeganSorbetImg, description: 'Sweetly refreshing, made with ripe melons' },
       { name: 'Muskmelon (VEGAN)', image: CommonVeganSorbetImg, description: 'A luscious serve made with freshly squeezed coconut milk and refreshing Melons' },
       { name: 'Poppy (VEGAN)', image: CommonIceCreamImg, description: 'Sleep therapy, Khus Khus grounded with Jaggery traditionally and mixed with freshly squeezed coconut milk' },
-      { name: 'Pineapple Sorbet', image: PineappleSorbetImg, description: 'Delicious and refreshing treat, made with fresh pineapple' },
-      { name: 'Plum Sorbet', image: PlumSorbetImg, description: 'Refreshing and bursting with sweet flavor of plum' },
       { name: 'Pomelo Sorbet', image: CommonVeganSorbetImg, description: 'A bittersweet sophisticated sorbet which is both healthy and refreshing' },
       { name: 'Strawberry Sorbet', image: CommonVeganSorbetImg, description: 'Tastes like eating a bowl of fresh, chilled strawberries' },
-      { name: 'Sugarcane Sorbet', image: SugercaneSorbatImg, description: 'Beat the heat with this refreshing sorbet' },
       { name: 'Tamarind Sorbet', image: CommonVeganSorbetImg, description: 'Sweet Tamarind hand squeezed to create this refreshing sorbet that\'s nothing but the real thing' },
       { name: 'Vegan Ice Cream', image: CommonVeganSorbetImg, description: 'Sinfully Delicious Dairy-Free Delights made with freshly squeezed coconut milk (Check for Flavors)' },
       { name: 'Vegan Ice cream (SF)', image: CommonIceCreamImg, description: 'Sinfully Delicious Dairy-Free Delights (no added sugar) made with all natural dates syrup from UAE (Check for Flavours)' },
       { name: 'Watermelon Sorbet', image: CommonVeganSorbetImg, description: 'Sweet summertime bliss, made with juicy watermelon' },
-      { name: 'WoodApple Sorbet', image: WoodappleSorbetImg, description: 'Seasonal delicacy, a tasty and healthy refreshing traditional drink made into a sorbet with a combination of wood apple and jaggery' },
     ],
   },
 ];
