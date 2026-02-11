@@ -4,8 +4,8 @@ import Award2Img from '@/assets/Award2.jpeg';
 const awards = [
   {
     image: Award1Img,
-    title: 'Excellence in Artisan Gelato',
-    description: 'Recognized for our dedication to authentic gelato-making, natural ingredients, and uncompromising quality.',
+    title: 'Excellence in Artisan Ice Cream',
+    description: 'Recognized for our dedication to authentic Ice Cream-making, natural ingredients, and uncompromising quality.',
   },
   {
     image: Award2Img,

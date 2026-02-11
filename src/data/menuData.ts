@@ -227,8 +227,8 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Belgium Hot Chocolate', image: BelgiumHotChocolateImg, description: 'A luscious blend of aromatic Belgium cocoa with single-origin Peruvian chocolate — a true treat for the senses!' },
       { name: 'Belgium Hot Chocolate with Arabica Coffee', image: BelgiumHotChocolateArabicaCoffeeImg, description: 'Distinctly delicious! A spectacular blend of rich, creamy hot chocolate infused with fine 100% Arabica coffee.' },
       { name: 'Belgium Hot Chocolate with Hazelnut', image: BelgiumHotChocolateHazelnutImg, description: 'Rich, creamy hot chocolate blended with home-toasted hazelnut butter — a true cup of heaven!' },
-      { name: 'Vegan Belgium Hot Chocolate', image: BelgiumHotChocolateHazelnutImg, description: 'Rich creamy coconut milk A luscious blend of aromatic Belgium cocoa & single origin Peruvian chocolate with rich creamy coconut milk,dairy free !!' },
-      { name: 'Choco Brownie Shake', image: BelgiumHotChocolateHazelnutImg, description: 'A chocolate lovers delight !! a big moist piece of super dark,rich chocolate cake blended right in for a cold treat you can\'t pass up.' },
+      { name: 'Vegan Belgium Hot Chocolate', image: CommonIceCreamImg, description: 'Rich creamy coconut milk A luscious blend of aromatic Belgium cocoa & single origin Peruvian chocolate with rich creamy coconut milk,dairy free !!' },
+      { name: 'Choco Brownie Shake', image: CommonIceCreamImg, description: 'A chocolate lovers delight !! a big moist piece of super dark,rich chocolate brownie blended right in for a cold treat you can\'t pass up.' },
     ],
   },
   {
@@ -258,15 +258,11 @@ export const menuCategories: MenuCategory[] = [
         description: 'Specially baked warm brioche with a heart made of ice cream of your choice.'
       },
       { 
-        name: 'Crispy Chilly Cheese Toast', 
+        name: 'Crispy Chilly Cheese ', 
         image: CrispyChillyCheesToastImg,
         description: 'Creamy chilly capsicum mixture applied over bread topped with cheese and toasted to perfection.'
       },
-      { 
-        name: 'Grilled Banana Nutella Sandwich', 
-        image: GrilledBananaNutellaSandwichImg,
-        description: 'Crunchy on the outside and heavenly on the inside. An AMAZING sandwich with homemade Chocohazelnut Spread, ripe bananas grilled in an artisan Panini bread.'
-      },
+
     ],
   },
   {
@@ -278,7 +274,7 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Almond Fudge', image: AlmondFudgeImg, description: 'Classic Vanilla ice cream served with homemade chocolate sauce and lots and lots of roasted whole Almonds' },
       { name: 'Kubani ka Meetha', image: KubanikaMeethaImg, description: 'Classic Vanilla ice cream served with roasted Almonds and Kubani ka Meetha' },
       { name: 'Cashew Fudge', image: CashewFudgeImg, description: 'Classic Vanilla ice cream served with homemade chocolate sauce and lots and lots of roasted Cashew halves' },
-      { name: 'Brownie Fudge', image: CashewFudgeImg, description: 'A chocolate lovers favourite, rich homemade brownie topped with hot fudge and topped with Dark Chocolate with roasted Almond ice cream. Chocolicious!!' },
+      { name: 'Brownie Fudge', image: CommonIceCreamImg, description: 'A chocolate lovers favourite, rich homemade brownie topped with hot fudge and topped with Dark Chocolate with roasted Almond ice cream. Chocolicious!!' },
     ],
   },
   {
