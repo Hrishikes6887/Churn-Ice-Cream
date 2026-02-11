@@ -12,7 +12,8 @@ import JackfruitImg from '@/assets/Jackfruit.jpg';
 import MangoImg from '@/assets/Mango.jpg';
 import MangoPassionImg from '@/assets/Mango Passion.jpg';
 import PassionFruitImg from '@/assets/Passion Fruit.jpg';
-import PineappleImg from '@/assets/Pineapple.jpg';
+import PineappleIceCreamImg from '@/assets/Pineapple Ice Cream.jpg';
+// import PineappleImg from '@/assets/Pineapple.jpg'; // File doesn't exist
 import SaltedCaramelImg from '@/assets/Salted Caramel.jpg';
 import StrawberryImg from '@/assets/Strawberry.jpg';
 import ApricotImg from '@/assets/Apricot.jpg';
@@ -102,6 +103,10 @@ import CrispyChillyCheesToastImg from '@/assets/Crispy Chilly Cheese Toast.jpg';
 import GrilledBananaNutellaSandwichImg from '@/assets/Grilled Banana Nutella Sandwich.jpg';
 import CommonVeganSorbetImg from '@/assets/Common_VeganSorbet.jpg';
 import CommonIceCreamImg from '@/assets/Common_Ice_Cream.jpg';
+import WoodappleSorbetImg from '@/assets/woodapple Sorbet.jpeg';
+import SugercaneSorbatImg from '@/assets/Sugercane Sorbat.jpeg';
+import PlumSorbetImg from '@/assets/Plum Sorbet.jpeg';
+import PineappleSorbetImg from '@/assets/Pineapple Sorbet.jpg';
 
 // Category images
 import exoticFlavoursImg from '@/assets/exotic-flavours.jpg';
@@ -146,7 +151,7 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Ruby Chocolate', image: RubyChocolateImg, description: 'A brand-new ice cream made with ruby chocolate — a gift from nature with fresh berry fruitiness and luscious smoothness.' },
       { name: 'Pistachio', image: PistachioImg, description: 'The green gold from Iran — seduces the palate and captivates the senses.' },
       { name: 'Hazelnut', image: HazelnutImg, description: 'Made with freshly roasted hazelnuts sourced from Turkey.' },
-      { name: 'ChocoHazelnut(Nutella)', image: ChocoHazelnutNutellaImg, description: 'A luscious blend of rich chocolate and premium hazelnut.' },
+      { name: 'Gianduja(Nutella)', image: ChocoHazelnutNutellaImg, description: 'Blended with our own Hazelnut-Chocolate spread.' },
       { name: 'Brownie Heaven', image: BrownieHeavenImg, description: 'Fudge brownie gelato with real, gooey homemade brownies folded into dark chocolate ice cream.' },
       { name: 'Classic Vanilla', image: ClassicVanillaImg, description: 'Pure & Natural Vanilla, a unique experience on the palate' },
       { name: 'Custard Apple', image: CustardAppleImg, description: 'Exotic, creamy fruit treat' },
@@ -157,7 +162,7 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Mango', image: MangoImg, description: '100% Real mangos, a tropical paradise in your mouth.Enjoy!' },
       { name: 'Mango Passion', image: MangoPassionImg, description: 'Sweet, tangy and refreshing , a balance of sweetness of mangoes and tanginess of passionfruit' },
       { name: 'Passion Fruit', image: PassionFruitImg, description: 'A Hawaiian treat, sour-sweet and fragrant' },
-      { name: 'Pineapple', image: PineappleImg, description: 'Tangy , ultra-creamy & refreshing , A perfect summer scoop' },
+      { name: 'Pineapple', image: PineappleIceCreamImg, description: 'Tangy , ultra-creamy & refreshing , A perfect summer scoop' },
       { name: 'Salted Caramel', image: SaltedCaramelImg, description: 'A rich golden homemade caramel sauce with a pinch of Himalayan pink salt' },
       { name: 'Strawberry', image: StrawberryImg, description: 'Perfectly sweet, made with fresh strawberries' },
       { name: 'Apricot', image: CommonIceCreamImg, description: 'Sweet tart apricots hit you on the front of the palate with the creaminess on the tongue' },
@@ -165,12 +170,12 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Berrilicious', image: CommonIceCreamImg, description: 'Heavenly berries in one ice cream' },
       { name: 'Black Grape', image: CommonIceCreamImg, description: 'Like eating a frozen grape, made with fresh black grape' },
       { name: 'Blackberry', image: CommonIceCreamImg, description: 'Slowly disengage from reality with this blissful Blackberry ice cream' },
-      { name: 'BlackGarlic', image: CommonIceCreamImg, description: "A bold and tantalizing creation , Black Garlic is a Savory sensation that's sure to embark you on a flavor journey you won't soon forget!" },
+      { name: 'BlackGarlic', image: BlackGarlicImg, description: "A bold and tantalizing creation , Black Garlic is a Savory sensation that's sure to embark you on a flavor journey you won't soon forget!" },
       { name: 'Bluepea', image: CommonIceCreamImg, description: 'All natural vibrant Blue Ice Cream that looks absolutely gorgeous. Delightful and refreshing flavor' },
       { name: 'Brazilnut', image: CommonIceCreamImg, description: 'This energy dense, highly nutritious , nutty ice cream is a trip to the Amazon' },
       { name: 'Brownie Overload', image: CommonIceCreamImg, description: 'Vanilla ice cream with lots and lots of homemade gooey brownie' },
       { name: 'Cherry', image: CommonIceCreamImg, description: 'Deliciously rich, creamy and tart treat made from real cherries' },
-      { name: 'Cherry/Cheese', image: CommonIceCreamImg, description: 'Sweet-tart, bright red cherries mixed with homemade Mascarpone Cheese' },
+      { name: 'Cherry/Cheese', image: CherryCheeseImg, description: 'Sweet-tart, bright red cherries mixed with homemade Mascarpone Cheese' },
       { name: 'Choco Butter Scotch', image: CommonIceCreamImg, description: 'Rich home made butterscotch sauce with coverture chocolate, make a taste treat never forgotten' },
       { name: 'Choco Coco', image: CommonIceCreamImg, description: 'This scrumptious treat combines the the nuttiness of the toasted coconut with pure single origin colombian white chocolate, an amazing flavor combination' },
       { name: 'Choco/Chilli', image: CommonIceCreamImg, description: 'Enjoy the rich chocolate, feel the kick of chili & the warmth in the back of your throat.' },
@@ -178,20 +183,19 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Choco/Orange', image: CommonIceCreamImg, description: 'Skeptical of chocolate with citrus, one taste will be all it takes to convince you.' },
       { name: 'Choco/Raspberry', image: CommonIceCreamImg, description: 'A luscious treat of Rich Dark Chocolate with sweet & tart Red Raspberry' },
       { name: 'Cookie Caramel', image: CommonIceCreamImg, description: 'A scrumptious blend of Cookie with home-made caramel, irresistible !!' },
-      { name: 'Fresh Fig', image: CommonIceCreamImg, description: 'Made with Fresh Fig roasted in Brown Sugar and Honey' },
+      { name: 'Fresh Fig', image: FreshFigImg, description: 'Made with Fresh Fig roasted in Brown Sugar and Honey' },
       { name: 'Fresh Mint', image: CommonIceCreamImg, description: 'A lively, deliciously refreshing fresh home-grown peppermint ice cream, feel the menthol freshness !!' },
-      { name: 'Gianduja(Nutella)', image: CommonIceCreamImg, description: 'Blended with our own Hazelnut-Chocolate spread, BETTER than Nutella !!' },
+      // { name: 'Gianduja(Nutella)', image: CommonIceCreamImg, description: 'Blended with our own Hazelnut-Chocolate spread, BETTER than Nutella !!' },
       { name: 'Gianduja(Nutella) Banana', image: CommonIceCreamImg, description: 'Our own Hazelnut-Chocolate spread blended with banana to make this creamy nutty chocolaty nice cream , creamy and luxurious ...' },
       { name: 'Guava', image: CommonIceCreamImg, description: 'Tantalize your taste buds with super rich natural taste of fresh Guava' },
       { name: 'Hazelnut/Coffee', image: CommonIceCreamImg, description: 'Hazelnuts jazz up the earthy flavours of coffee, a amazing combo that heightens the flavor of both ingredients.' },
       { name: 'Hazelnut Orange', image: CommonIceCreamImg, description: 'A creamy toasted hazelnuts icecream mixed with refreshing oranges' },
       { name: 'Herbed Cheese', image: CommonIceCreamImg, description: 'This Cheese Ice Cream with herbs is a delicious, elegant, and unexpected summer dessert.' },
       { name: 'Hojicha', image: CommonIceCreamImg, description: 'Dive into the luxurious flavors of Japanese roasted green tea with a distinctive earthy scent, sweet smoky flavor, and autumnal red-brown color, a powerhouse of antioxidants' },
-      { name: 'Kala Jamun', image: CommonIceCreamImg, description: 'Exotic ice cream made with fresh and juicy Black Jamun' },
+      { name: 'Kala Jamun', image: KalaJamunImg, description: 'Exotic ice cream made with fresh and juicy Black Jamun' },
       { name: 'Kardantu', image: CommonIceCreamImg, description: 'A royal sweet of Karnataka loaded with exotic dry fruits and nuts mixed into our creamy vanilla ice cream' },
-      { name: 'Kulfi', image: CommonIceCreamImg, description: 'The royal treat' },
-      { name: 'Lakshman Phal/Soursop Sorbet', image: CommonIceCreamImg, description: 'Fiber rich fruit filled with beneficial antioxidants' },
-      { name: 'Lychee', image: CommonIceCreamImg, description: 'Heavenly taste' },
+      { name: 'Kulfi', image: KulfiImg, description: 'The royal treat' },
+      { name: 'Lychee', image: LycheeImg, description: 'Heavenly taste' },
       { name: 'Macadamia', image: CommonIceCreamImg, description: 'Creamy and buttery ice cream with roasted macadamia nut butter, Hawaiian divine flavours !!' },
       { name: 'Masala Chai', image: CommonIceCreamImg, description: 'Complex blend freshly hand-ground aromatic spices and Indian black tea' },
       { name: 'Mascarpone Cheese', image: CommonIceCreamImg, description: 'A chefs delight that oozes wholesome flavor' },
@@ -200,19 +204,16 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Oreostic', image: CommonIceCreamImg, description: 'Twice the fun with soft vanilla ice cream & crushed Oreo cookies' },
       { name: 'Paan', image: CommonIceCreamImg, description: 'A digestive dessert, a refreshing after-dinner treat with real paan leaves' },
       { name: 'Peach', image: CommonIceCreamImg, description: 'This deliciously irresistible ice ream is creamy,decadent and bursting with fresh peaches.' },
-      { name: 'Peanut', image: CommonIceCreamImg, description: 'Homemade peanut butter with coverture chocolate shavings mixed into a rich creamy ice cream' },
+      { name: 'Peanut', image: PeanutImg, description: 'Homemade peanut butter with coverture chocolate shavings mixed into a rich creamy ice cream' },
       { name: 'Peanut Banana', image: CommonIceCreamImg, description: 'Dreamy and Creamy ice cream made with homemade peanut butter and ripe bananas, healthy and amazing..' },
       { name: 'Pecan', image: CommonIceCreamImg, description: 'The magnificent flavor of roasted pecans folded into a rich creamy ice cream,a delight to your senses..' },
-      { name: 'Persimmon', image: CommonIceCreamImg, description: 'Exotic fall fruit with a lovely orange color and a beguiling, sweet, sophisticated flavor' },
-      { name: 'Physalis', image: CommonIceCreamImg, description: 'A unique, tropical fruit which is a little bit sweet, a little bit tart and 100% lickable!' },
-      { name: 'Pomegranate Sorbet', image: CommonIceCreamImg, description: 'Refreshing and anti-oxidant: Fresh squeezed pomegranates for a tarty, complex and intense sorbet' },
-      { name: 'Poppy (VEGAN)', image: CommonIceCreamImg, description: 'Sleep therapy, Khus Khus grounded with Jaggery traditionally and mixed with freshly squeezed coconut milk' },
+      { name: 'Persimmon', image: PersimmonImg, description: 'Exotic fall fruit with a lovely orange color and a beguiling, sweet, sophisticated flavor' },
+      { name: 'Physalis', image: PhysalisImg, description: 'A unique, tropical fruit which is a little bit sweet, a little bit tart and 100% lickable!' },
       { name: 'Pumpkin Pie', image: CommonIceCreamImg, description: 'Spiced Pumpkin, Unique, Luxuriously rich and flavorful' },
       { name: 'Ramphal', image: CommonIceCreamImg, description: 'Lusciouss, creamy buttery texture fruit treat' },
       { name: 'Raspberry', image: CommonIceCreamImg, description: 'Fruity dessert of your dreams! A delicious, indulgent, rich and creamy ice cream made with Real Raspberries' },
       { name: 'Single Origin Chocolates', image: CommonIceCreamImg, description: 'A sophisticated flavor and aroma with our single origin chocolates from PERU and COLOMBIA' },
       { name: 'Tender Coconut', image: CommonIceCreamImg, description: 'Dive into this intense Tropical breeze, gelato made with fresh, tender coconut chunks' },
-      { name: 'Vegan Ice cream (SF)', image: CommonIceCreamImg, description: 'Sinfully Delicious Dairy-Free Delights (no added sugar) made with all natural dates syrup from UAE (Check for Flavours)' },
       { name: 'Walnut', image: CommonIceCreamImg, description: 'This scrumptious ice cream is rich with smoky notes from the toasted walnuts, your dose of omega-3 fatty acid' },
       { name: 'White Chocolate', image: CommonIceCreamImg, description: 'An intense pleasure, rich in single origin pure white chocolate from COLOMBIA' },
     ],
@@ -290,6 +291,8 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Mint and Lemon Sorbet', image: MintandLemonSorbetImg, description: 'Magnificently refreshing, made with freshly squeezed Lemon and fresh home-grown peppermint' },
       { name: 'Kiwi Sorbet', image: KiwiSorbetImg, description: 'Sweet & Sour, refreshing and bursting with vitamin C' },
       { name: 'Black Grape Sorbet', image: BlackGrapeSorbetImg, description: 'A rich, punchy sorbet just full of grape, sweet and tangy !!' },
+      { name: 'Lakshman Phal/Soursop Sorbet', image: CommonIceCreamImg, description: 'Fiber rich fruit filled with beneficial antioxidants' },
+      { name: 'Pomegranate Sorbet', image: CommonIceCreamImg, description: 'Refreshing and anti-oxidant: Fresh squeezed pomegranates for a tarty, complex and intense sorbet' },
       { name: 'Blood Orange Sorbet', image: CommonVeganSorbetImg, description: 'Refreshing sorbet showcasing the vibrant colour of the blood orange' },
       { name: 'Carrot Sorbet', image: CommonVeganSorbetImg, description: 'Vibrant color from the carrots & orange is enhanced by the zing from ginger & Lemon' },
       { name: 'Chocolate Sorbet', image: CommonVeganSorbetImg, description: 'Guilt-free indulgence !!!' },
@@ -303,15 +306,17 @@ export const menuCategories: MenuCategory[] = [
       { name: 'Mango Sorbet', image: CommonVeganSorbetImg, description: 'Sweet and tangy, made with the finest mangos' },
       { name: 'Melon Sorbet', image: CommonVeganSorbetImg, description: 'Sweetly refreshing, made with ripe melons' },
       { name: 'Muskmelon (VEGAN)', image: CommonVeganSorbetImg, description: 'A luscious serve made with freshly squeezed coconut milk and refreshing Melons' },
-      { name: 'Pineapple Sorbet', image: CommonVeganSorbetImg, description: 'Delicious and refreshing treat, made with fresh pineapple' },
-      { name: 'Plum Sorbet', image: CommonVeganSorbetImg, description: 'Refreshing and bursting with sweet flavor of plum' },
+      { name: 'Poppy (VEGAN)', image: CommonIceCreamImg, description: 'Sleep therapy, Khus Khus grounded with Jaggery traditionally and mixed with freshly squeezed coconut milk' },
+      { name: 'Pineapple Sorbet', image: PineappleSorbetImg, description: 'Delicious and refreshing treat, made with fresh pineapple' },
+      { name: 'Plum Sorbet', image: PlumSorbetImg, description: 'Refreshing and bursting with sweet flavor of plum' },
       { name: 'Pomelo Sorbet', image: CommonVeganSorbetImg, description: 'A bittersweet sophisticated sorbet which is both healthy and refreshing' },
       { name: 'Strawberry Sorbet', image: CommonVeganSorbetImg, description: 'Tastes like eating a bowl of fresh, chilled strawberries' },
-      { name: 'Sugarcane Sorbet', image: CommonVeganSorbetImg, description: 'Beat the heat with this refreshing sorbet' },
+      { name: 'Sugarcane Sorbet', image: SugercaneSorbatImg, description: 'Beat the heat with this refreshing sorbet' },
       { name: 'Tamarind Sorbet', image: CommonVeganSorbetImg, description: 'Sweet Tamarind hand squeezed to create this refreshing sorbet that\'s nothing but the real thing' },
       { name: 'Vegan Ice Cream', image: CommonVeganSorbetImg, description: 'Sinfully Delicious Dairy-Free Delights made with freshly squeezed coconut milk (Check for Flavors)' },
+      { name: 'Vegan Ice cream (SF)', image: CommonIceCreamImg, description: 'Sinfully Delicious Dairy-Free Delights (no added sugar) made with all natural dates syrup from UAE (Check for Flavours)' },
       { name: 'Watermelon Sorbet', image: CommonVeganSorbetImg, description: 'Sweet summertime bliss, made with juicy watermelon' },
-      { name: 'WoodApple Sorbet', image: CommonVeganSorbetImg, description: 'Seasonal delicacy, a tasty and healthy refreshing traditional drink made into a sorbet with a combination of wood apple and jaggery' },
+      { name: 'WoodApple Sorbet', image: WoodappleSorbetImg, description: 'Seasonal delicacy, a tasty and healthy refreshing traditional drink made into a sorbet with a combination of wood apple and jaggery' },
     ],
   },
 ];

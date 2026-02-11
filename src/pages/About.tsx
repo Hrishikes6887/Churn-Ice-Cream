@@ -69,7 +69,7 @@ const About = () => {
       <section className="relative min-h-screen flex items-center py-20 px-6 bg-[#3D3127]">
         <div className="absolute inset-0">
           <img
-            src={brandStoryImg}
+            src={darkChocolateImg}
             alt="The Beginning"
             className="w-full h-full object-cover opacity-30"
           />
@@ -101,7 +101,7 @@ const About = () => {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={darkChocolateImg}
+            src={brandStoryImg}
             alt="Innovation Lab"
             className="w-full h-full object-cover scale-innovation"
           />

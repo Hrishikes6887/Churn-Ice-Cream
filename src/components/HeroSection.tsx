@@ -1,4 +1,4 @@
-import { UtensilsCrossed, ShoppingCart } from 'lucide-react';
+import { UtensilsCrossed, ChefHat } from 'lucide-react';
 import { useRef, useState, useEffect } from 'react';
 import heroImage from '@/assets/hero-gelato.jpg';
 import heroVideo from '@/assets/Artisan Ice cream.mp4';
@@ -81,7 +81,7 @@ const HeroSection = () => {
               href="#creations"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/30 font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
             >
-              {/* <ShoppingCart className="w-5 h-5" /> */}
+              <ChefHat className="w-5 h-5" />
               Our Creations
             </a>
           </div>

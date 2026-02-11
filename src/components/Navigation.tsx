@@ -8,6 +8,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const isMenuPage = location.pathname.startsWith('/menu/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +29,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        isScrolled || isMenuPage
           ? 'bg-card/95 backdrop-blur-md shadow-lg py-3'
           : 'bg-transparent py-5'
       }`}
@@ -44,12 +45,12 @@ const Navigation = () => {
           />
           <div className="flex flex-col">
             <span className={`font-heading font-bold text-2xl md:text-3xl tracking-wide transition-colors ${
-              isScrolled ? 'text-primary' : 'text-cream'
+              isScrolled || isMenuPage ? 'text-primary' : 'text-cream'
             }`}>
               CHURN
             </span>
             <span className={`text-xs tracking-[0.2em] uppercase transition-colors ${
-              isScrolled ? 'text-muted-foreground' : 'text-cream/80'
+              isScrolled || isMenuPage ? 'text-muted-foreground' : 'text-cream/80'
             }`}>
               Fresh Ice Cream
             </span>
@@ -63,7 +64,7 @@ const Navigation = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className={isScrolled ? 'nav-link-dark' : 'nav-link'}
+                className={isScrolled || isMenuPage ? 'nav-link-dark' : 'nav-link'}
               >
                 {link.label}
               </Link>
@@ -71,7 +72,7 @@ const Navigation = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className={isScrolled ? 'nav-link-dark' : 'nav-link'}
+                className={isScrolled || isMenuPage ? 'nav-link-dark' : 'nav-link'}
               >
                 {link.label}
               </a>
@@ -83,7 +84,7 @@ const Navigation = () => {
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`lg:hidden p-2 rounded-lg transition-colors ${
-            isScrolled ? 'text-primary hover:bg-muted' : 'text-cream hover:bg-cream/10'
+            isScrolled || isMenuPage ? 'text-primary hover:bg-muted' : 'text-cream hover:bg-cream/10'
           }`}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

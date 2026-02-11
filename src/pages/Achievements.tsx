@@ -89,7 +89,7 @@ const Achievements = () => {
                 }}
               >
                 {/* Award Image */}
-                <div className="relative aspect-square overflow-hidden rounded-2xl mb-6 bg-white">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-white">
                   <img
                     src={award.image}
                     alt={award.title}
