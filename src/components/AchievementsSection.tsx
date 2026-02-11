@@ -31,6 +31,36 @@ const AchievementsSection = () => {
           </p>
         </div>
 
+        {/* Restaurant Guru Award Ribbon */}
+        <div className="flex justify-center mb-12 md:mb-16">
+          <div className="w-full max-w-[200px] md:max-w-[240px]">
+            <div id="circle-r-ribbon" onClick={(e) => {if((e.target as HTMLElement).nodeName.toLowerCase() !== 'a') {window.open((document.querySelector('.r-ribbon_title') as HTMLAnchorElement)?.href);return 0;}}} className="">
+              <div className="r-ribbon_ahead ">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="160px" height="160px" viewBox="0 0 160 160">
+                  <defs>
+                    <path id="heading-arc" d="M 30 80 a 50 50 0 1 1 100 0"></path>
+                  </defs>
+                  <text className="r-ribbon_ahead-heading " fill="#000" textAnchor="middle">
+                    <textPath startOffset="50%" xlinkHref="#heading-arc">Recommended</textPath>
+                  </text>
+                </svg>
+              </div>
+              <p className="r-ribbon_year">2025</p>
+              <a href="https://restaurant-guru.in/CHURN-Bengaluru" className="r-ribbon_title " target="_blank" rel="noopener noreferrer">CHURN</a>
+              <div className="r-ribbon_ahead r-ribbon_ahead-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="120px" height="120px" viewBox="0 0 120 120">
+                  <defs>
+                    <path id="subheading-arc" d="M 12 60 a 48 48 0 0 0 96 0"></path>
+                  </defs>
+                  <text className="r-ribbon_ahead-subh" fill="#000" textAnchor="middle">
+                    <textPath startOffset="50%" xlinkHref="#subheading-arc"><a href="https://restaurantguru.com" target="_blank" rel="noopener noreferrer">Restaurant Guru</a></textPath>
+                  </text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Awards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
           {awards.map((award, index) => (
@@ -44,7 +74,7 @@ const AchievementsSection = () => {
               }}
             >
               {/* Award Image */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 bg-white shadow-lg">
+              <div className="relative aspect-square overflow-hidden rounded-2xl mb-6 bg-white shadow-lg">
                 <img
                   src={award.image}
                   alt={award.title}

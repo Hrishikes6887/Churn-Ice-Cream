@@ -1,5 +1,6 @@
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock, Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '@/assets/LOGO.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,7 +28,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="/src/assets/LOGO.png" 
+                src={logo} 
                 alt="Churn Fresh Logo" 
                 className="w-16 h-16 rounded-full object-cover"
               />
