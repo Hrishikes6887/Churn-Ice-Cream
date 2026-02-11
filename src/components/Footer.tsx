@@ -26,9 +26,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full border-2 border-cream/30 bg-cream/10 flex items-center justify-center">
-                <span className="font-heading font-bold text-cream text-sm">CF</span>
-              </div>
+              <img 
+                src="/src/assets/LOGO.png" 
+                alt="Churn Fresh Logo" 
+                className="w-16 h-16 rounded-full object-cover"
+              />
               <div>
                 <span className="font-heading font-bold text-xl text-cream tracking-wide block">
                   CHURN

@@ -90,7 +90,7 @@ const About = () => {
                 After being trained by Gelato Masters in Italy, we spent a full year relentlessly experimenting to arrive at unique artisanal flavours made completely from scratch.
               </p>
               <p className="reveal" style={{ transitionDelay: '0.3s' }}>
-                Using fresh fruits, milk, seasonal ingredients, and our own caramels and nut butters — better than Nutella.
+                Using fresh fruits, milk, seasonal ingredients, and our own caramels and nut butters.
               </p>
             </div>
           </div>

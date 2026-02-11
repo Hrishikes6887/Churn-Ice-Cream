@@ -14,7 +14,7 @@ const FlavorCategories = () => {
             Explore Our Creations
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From classic favorites to exotic innovations, discover over 100 handcrafted flavors.
+            From classic favorites to exotic innovations, discover over 100+ handcrafted flavors.
           </p>
         </div>
 

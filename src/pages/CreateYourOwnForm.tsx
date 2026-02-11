@@ -11,13 +11,14 @@ const CreateYourOwnForm = () => {
     sweetener: '',
     quantity: '',
     dateTime: '',
+    instructions: '',
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -45,7 +46,7 @@ Flavour: ${formData.flavour}
 Milk: ${formData.milk}
 Sweetener: ${formData.sweetener}
 Quantity: ${formData.quantity}
-Date: ${formData.dateTime}
+Date: ${formData.dateTime}${formData.instructions ? `\nInstructions: ${formData.instructions}` : ''}
 
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
@@ -81,7 +82,7 @@ Phone: ${formData.phone}`;
               {/* WHAT'S YOUR FLAVOUR? */}
               <div>
                 <label htmlFor="flavour" className="block text-sm font-bold uppercase tracking-wide mb-2">
-                  WHAT'S YOUR FLAVOUR? <span className="text-red-500">*</span> <span className="inline-flex items-center justify-center w-4 h-4 bg-gray-400 text-white rounded-full text-xs">?</span>
+                  WHAT'S YOUR FLAVOUR? <span className="text-red-500">*</span>  
                 </label>
                 <input
                   type="text"
@@ -169,22 +170,25 @@ Phone: ${formData.phone}`;
                 <label htmlFor="dateTime" className="block text-sm font-bold uppercase tracking-wide mb-2">
                   DATE <span className="text-red-500">*</span>
                 </label>
+                <p className="text-sm text-gray-600 mb-2">
+                  Please choose a date TWO DAYS AHEAD of the date you submit this form
+                </p>
                 <input
                   type="date"
                   id="dateTime"
                   name="dateTime"
                   value={formData.dateTime}
                   onChange={handleChange}
-                  placeholder="Please choose a date TWO DAYS AHEAD of the date you submit this form"
                   required
                   min={new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent cursor-pointer"
                   style={{
-                    direction: 'ltr'
+                    colorScheme: 'light'
                   }}
                 />
               </div>
 
+             
               {/* FIRST NAME / LAST NAME */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -219,23 +223,6 @@ Phone: ${formData.phone}`;
                 </div>
               </div>
 
-              {/* EMAIL */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-bold uppercase tracking-wide mb-2">
-                  EMAIL <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Email Address"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
-                />
-              </div>
-
               {/* PHONE NUMBER */}
               <div>
                 <label htmlFor="phone" className="block text-sm font-bold uppercase tracking-wide mb-2">
@@ -250,6 +237,21 @@ Phone: ${formData.phone}`;
                   placeholder="Number"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent"
+                />
+              </div>
+ {/* INSTRUCTIONS */}
+              <div>
+                <label htmlFor="instructions" className="block text-sm font-bold uppercase tracking-wide mb-2">
+                  SPECIAL INSTRUCTIONS
+                </label>
+                <textarea
+                  id="instructions"
+                  name="instructions"
+                  value={formData.instructions}
+                  onChange={handleChange}
+                  placeholder="Any special requests or dietary requirements? (Optional)"
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A44A] focus:border-transparent resize-vertical"
                 />
               </div>
 

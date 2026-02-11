@@ -53,7 +53,7 @@ const HeroSection = () => {
           {/* Supporting Badge */}
           <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-chocolate/40 backdrop-blur-md border border-amber-200/20 mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-amber-600/80" />
-            <span className="text-amber-100/90 text-xs md:text-sm tracking-widest uppercase font-light">Authentic Gelato, Crafted Fresh In-Store Every Day</span>
+            <span className="text-amber-100/90 text-xs md:text-sm tracking-widest uppercase font-light">Crafted Fresh In-Store Every Day</span>
           </div>
 
           {/* Main Headline */}
@@ -82,18 +82,8 @@ const HeroSection = () => {
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-cream/10 hover:bg-cream/20 text-cream border border-cream/30 font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-105"
             >
               <ShoppingCart className="w-5 h-5" />
-              Menu
+              Our Creations
             </a>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-          <div className="flex flex-col items-center gap-2 text-cream/60">
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <div className="w-5 h-8 rounded-full border-2 border-cream/40 flex justify-center pt-1">
-              <div className="w-1 h-2 bg-cream/60 rounded-full animate-float" />
-            </div>
           </div>
         </div>
       </div>

@@ -230,7 +230,7 @@ export const menuCategories: MenuCategory[] = [
   {
     name: 'Sandwich',
     slug: 'sandwich',
-    description: 'Freshly grilled panini sandwiches with premium fillings',
+    description: 'Freshly grilled panini sandwiches with homemade fillings',
     image: sandwichImg,
     items: [
       { 
