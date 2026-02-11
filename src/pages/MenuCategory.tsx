@@ -1,18 +1,53 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Navigate, Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getCategoryBySlug } from '@/data/menuData';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useState, useEffect } from 'react';
+
+// Category-specific items per page
+const getItemsPerPage = (slug: string): number => {
+  if (slug === 'vegan-sorbet') return 7;
+  return 27; // Default for ice-cream-flavours and others
+};
 
 const MenuCategory = () => {
   const { category } = useParams<{ category: string }>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromUrl = parseInt(searchParams.get('page') || '1', 10);
+  const [currentPage, setCurrentPage] = useState(pageFromUrl);
   
   const categoryData = category ? getCategoryBySlug(category) : undefined;
+
+  // Sync currentPage with URL param
+  useEffect(() => {
+    const pageParam = parseInt(searchParams.get('page') || '1', 10);
+    if (pageParam !== currentPage) {
+      setCurrentPage(pageParam);
+    }
+  }, [searchParams, currentPage]);
 
   // If category not found, redirect to 404
   if (!categoryData) {
     return <Navigate to="/404" replace />;
   }
+
+  // Calculate pagination with category-specific items per page
+  const ITEMS_PER_PAGE = getItemsPerPage(categoryData.slug);
+  const totalPages = Math.ceil(categoryData.items.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentItems = categoryData.items.slice(startIndex, endIndex);
+
+  // Show pagination for Ice Cream Flavours and Vegan/Sorbet categories
+  const showPagination = (categoryData.slug === 'ice-cream-flavours' || categoryData.slug === 'vegan-sorbet') && totalPages > 1;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setSearchParams({ page: page.toString() });
+    // Scroll to top of the grid smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen bg-[#F7F2EC]">
@@ -51,7 +86,7 @@ const MenuCategory = () => {
       <section className="pb-20 md:pb-28">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto">
-            {categoryData.items.map((item, index) => (
+            {currentItems.map((item, index) => (
               <div
                 key={item.name}
                 className="ice-cream-item"
@@ -85,6 +120,31 @@ const MenuCategory = () => {
               </div>
             ))}
           </div>
+
+          {/* Pagination */}
+          {showPagination && (
+            <div className="flex justify-center items-center gap-3 mt-12 md:mt-16">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`
+                    w-10 h-10 rounded-full font-medium text-base
+                    transition-all duration-300
+                    ${
+                      currentPage === page
+                        ? 'bg-[#3D3127] text-[#F7F2EC] shadow-lg scale-110'
+                        : 'bg-white text-[#6B5E52] hover:bg-[#3D3127] hover:text-[#F7F2EC] hover:scale-105'
+                    }
+                  `}
+                  aria-label={`Go to page ${page}`}
+                  aria-current={currentPage === page ? 'page' : undefined}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+          )}
 
           {/* Empty State */}
           {categoryData.items.length === 0 && (
